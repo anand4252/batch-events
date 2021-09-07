@@ -42,7 +42,7 @@ public class StartCountAndTimeBased {
      */
     @SneakyThrows
     private static void fireEventsFromMainThread(CountAndTimeBasedBatchManager countAndTimeBasedBatchManager) {
-        System.out.println("Firing events from the same thread***** ");
+        System.out.println("Firing events from the same thread ***** ");
         for (int i = 1; i <= 10000; i++) {
             Thread.sleep(100);
             final Event event = new Event("main_thread_" + i, "eventName_" + i);
