@@ -20,7 +20,7 @@ public class TimeBasedBatchManager {
         batchedEvents = new ArrayList<>(BATCH_SIZE_THRESHOLD);
         fbPublisher = new FbPublisher();
         ScheduledExecutorService fbEventSenderService = Executors.newSingleThreadScheduledExecutor(); // Creating a thread scheduler: start with the delay of 5 seconds, after that runs every 5 seconds
-        fbEventSenderService.scheduleAtFixedRate(new TimeBasedTask(), BATCH_TIME_THRESHOLD_IN_SECONDS, BATCH_TIME_THRESHOLD_IN_SECONDS, TimeUnit.SECONDS);
+        fbEventSenderService.scheduleAtFixedRate(new TimeBasedTask(), 0, BATCH_TIME_THRESHOLD_IN_SECONDS, TimeUnit.SECONDS);
     }
 
     public void addEvent(Event event) {// This method is called by call the threads
